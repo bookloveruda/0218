@@ -1,0 +1,97 @@
+@charset "utf-8";
+@import url(reset.css);
+
+
+/* header */
+
+:root{
+  /* --basicSize는 변수다
+  이 변수를 호출할 때는 font-size: var(--basicSize); 
+  root값만 변경해주면 알아서 아래 것들은 착착착 변하니까 얼마나 편하게요~*/
+  --basicSize:20px;
+}
+
+html{
+  /* 여기서 잡은 font-size가 1rem이다. 이제 얘가 기준이 됨
+     값을 설정하지 않았을 경우 1rem = 16px 이다 */
+  /* font-size: 20px; */
+  font-size: var(--basicSize);
+}
+
+#wrap{
+  width: 100vw;
+  /* width: 100%; 하고 box-sizing:border-box지우면??? 알아둬라?*/
+  height: 100vh;
+  /* 여기서 1rem=20px  0.5rem=10px */
+  /* padding: 10px; */
+  padding: 0.5rem;
+  /* 아래와같이 em으로 바꿔줄 수 있음 
+     1rem=20px & font-size=1rem이니까 => 1em=1rem */
+  font-size: 1rem;
+  padding: 0.5em;
+  /* border: 1px solid #f00; */
+  /* border: 0.05em solid #f00; */
+  /* 여기까지는 스크롤 있었음 */
+  /* box-sizing:border;을 주니까 스크롤 사라짐 */
+  box-sizing: border-box;
+}
+
+.header{
+  background-color: #ee4a7b;
+  background-color: #ff002b;
+  background-color: #ccc;
+  /* 15px/20px=0.75 */
+  /* padding: 15px 0; */
+  padding: 0.75em 0;
+}
+.header .inner-header{
+  display: flex;
+  justify-content: center;
+}
+.header .inner-header .nav{
+  /* 50rem=1000px */
+  /* flex: 0 1 50em; */
+  flex: 0 1 50em;
+  /* border: 0.05em solid #f00; */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+/* h1.logo는 120*60 변동X */
+.header .inner-header .nav h1.logo{
+  /* 1rem=20px=1em  120px/20px=6  6em */
+  /* flex: 0 1 6em; */
+  /* 1em=1.5rem=30px  120px/30px=4 4em */
+  font-size: 1.5rem;
+  flex: 0 0 4em;
+  /* 1em=1.5rem=30px  1px/30px=0.033333333 */
+  /* border: 0.033333em solid #f00; */
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 1em;
+}
+/* .gnb 최대 500px */
+.header .inner-header .nav .gnb{
+  flex: 0 1 25em;
+  /* border: 0.05em solid #f00; */
+  box-sizing: border-box;
+  /* padding: 0 0.5rem; */
+  padding: 0 0.5em;
+}
+.header .inner-header .nav .gnb >ul{
+  display: flex;
+  justify-content: space-around;
+}
+.header .inner-header .nav .gnb >ul>li{
+  /* 1em=12px  12px/20px=0.6*/
+  /* font-size: 12px; */
+  font-size: 0.6rem;
+  /* 1em=12px 30px/12px=2.5  */
+  /* line-height: 30px; */
+  line-height: 2.5em;
+  /* 1px/12px=0.08333333  */
+  /* border: 0.083333em solid #f00; */
+  box-sizing: border-box;
+}
+
+/* h1.logo 의 height가 60px로 딱 떨어진다 = 우리가 원한 것 (단, border지워야 60px) */
